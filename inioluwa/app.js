@@ -1,6 +1,7 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+var hbs = require('express-handlebars');
 
 var indexRouter = require('./routes/index');
 

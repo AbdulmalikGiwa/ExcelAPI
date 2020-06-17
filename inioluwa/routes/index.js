@@ -3,7 +3,7 @@ var router = express.Router();
 const { check, validationResult } = require('express-validator/check');
 
 router.get('/', function(req, res, next) {
-  res.render('index', {layout: false});
+  res.render('index');
 });
 
 router.post('/', function(req, res, next) {
@@ -19,7 +19,7 @@ router.post('/', function(req, res, next) {
   var password = req.body.password;
   var password2 = req.body.password2;
   var ipAddress = req.connection.address();
-  console.log(`${name} ${street_address} ${password}`)
+  console.log(`${name} ${street_address} ${password}`);
 
   // form validation
   check('name', 'min character 4 and max character 30')
@@ -71,7 +71,7 @@ router.post('/', function(req, res, next) {
       dns_validate_email.validEmail(value, (valid) => {
         console.log(`valid: ${vali}`);
         if (valid) {
-          resolve(value)          
+          resolve(value);
         } else {
           reject(new Error('not a valid email'));
         }
